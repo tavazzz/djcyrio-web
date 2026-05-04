@@ -1,6 +1,6 @@
 import About from "../components/About";
 import Songs from "../components/Songs";
-import MusicPlayer from "../components/MusicPlayer";
+
 import PageTransition from "../components/PageTransition";
 import SEO from "../components/SEO";
 
@@ -17,7 +17,7 @@ export default function Sobre() {
       <div className="pt-24 min-h-screen">
         <About />
         <Songs />
-        <MusicPlayer />
+        
       </div>
     </PageTransition>
   );
