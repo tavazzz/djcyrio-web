@@ -1,0 +1,218 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple-400: #715cbe;
+  --color-purple-500: #57449a;
+  --color-purple-600: #403273;
+  --color-purple-900: #211a3b;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #715cbe, #57449a);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #8b7cd6, #715cbe);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efeito de glow animado */
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(168, 85, 247, 0.4);
+  }
+}
+
+.glow-pulse {
+  animation: glow 3s ease-in-out infinite;
+}
+
+/* Gradiente animado */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #715cbe, #57449a, #211a3b, #715cbe);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Efeito de scanline */
+.scanlines::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Efeito de ruído */
+.noise::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Cursor customizado (opcional) */
+@media (pointer: fine) {
+  /* Remova os comentários abaixo se quiser usar cursor customizado */
+  /*
+  body {
+    cursor: none;
+  }
+
+  .custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(168, 85, 247, 0.8);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+  }
+
+  .custom-cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    background: rgba(168, 85, 247, 1);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+  }
+  */
+}
+
+/* Efeito de texto glitch (para usar em momentos específicos) */
+@keyframes glitch {
+  0% {
+    text-shadow: 2px 0 rgba(168, 85, 247, 0.5), -2px 0 rgba(87, 68, 154, 0.5);
+  }
+  25% {
+    text-shadow: -2px 0 rgba(168, 85, 247, 0.5), 2px 0 rgba(87, 68, 154, 0.5);
+  }
+  50% {
+    text-shadow: 2px 0 rgba(168, 85, 247, 0.5), -2px 0 rgba(87, 68, 154, 0.5);
+  }
+  75% {
+    text-shadow: -2px 0 rgba(168, 85, 247, 0.5), 2px 0 rgba(87, 68, 154, 0.5);
+  }
+  100% {
+    text-shadow: 2px 0 rgba(168, 85, 247, 0.5), -2px 0 rgba(87, 68, 154, 0.5);
+  }
+}
+
+.text-glitch:hover {
+  animation: glitch 0.3s ease infinite;
+}
+
+/* Efeito de fade in ao scroll */
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  will-change: opacity, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Perspectiva para efeitos 3D */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Efeito de energia nas bordas */
+@keyframes energy-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2), inset 0 0 20px rgba(168, 85, 247, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(168, 85, 247, 0.4), inset 0 0 40px rgba(168, 85, 247, 0.2);
+  }
+}
+
+.energy-border {
+  animation: energy-pulse 3s ease-in-out infinite;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+}
+
+/* Efeito de glitch sutil */
+@keyframes glitch-subtle {
+  0%, 100% {
+    clip-path: inset(0 0 0 0);
+  }
+  2% {
+    clip-path: inset(10% 0 80% 0);
+  }
+  4% {
+    clip-path: inset(80% 0 10% 0);
+  }
+  6% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+.glitch-hover:hover {
+  animation: glitch-subtle 0.3s ease-in-out;
+}
+
+/* Esconder scrollbar (para carrosséis) */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:jublackoficial.com)",
+      "WebFetch(domain:www.missiatto.com)",
+      "Bash(npm run *)",
+      "WebFetch(domain:drive.google.com)",
+      "Bash(dir /b /s \"C:\\\\Users\\\\gorgo\\\\portfolio-dj\")",
+      "Bash(findstr /i \"\\\\.jpg \\\\.jpeg \\\\.png \\\\.mp4 \\\\.webm\")"
+    ]
+  }
+}
